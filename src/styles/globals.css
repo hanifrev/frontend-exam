@@ -53,6 +53,25 @@ body {
   .MuiSlider-markActive {
     display: none !important;
   }
+  .MuiSlider-markLabel {
+    color: #8b8b8b;
+    font-weight: 500;
+    font-size: 14px;
+    top: 36px;
+    @screen md {
+      font-size: 16px;
+      top: 32px;
+    }
+    @screen lg {
+      top: 28px;
+    }
+  }
+  /* .MuiSlider-markLabel:first-child {
+    padding-left: 4px;
+  }
+  .MuiSlider-markLabel:last-child {
+    padding-right: 4px;
+  } */
   .MuiSlider-thumb {
     background: rgb(255, 208, 93);
   }

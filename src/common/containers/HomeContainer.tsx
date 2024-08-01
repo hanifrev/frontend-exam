@@ -1,10 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Sliders from '../components/Sliders';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/lib/store';
 
 const HomeContainer = () => {
+  const slidervalues = useSelector((state: RootState) => state.slider.value);
+  console.log(slidervalues, '====');
   return (
     <div className="flex flex-col gap-4 items-center w-full">
       <Button text="BUTTON" />

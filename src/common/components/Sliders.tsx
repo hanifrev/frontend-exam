@@ -1,28 +1,21 @@
 import React, { useState } from 'react';
 import Slider from '@mui/material/Slider';
-import { Box, Typography } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { sliderValue } from '@/lib/features/sliderSlice';
 
-const Sliders = () => {
-  // Mapping functions
+interface SlidersProps {
+  theValue?: number;
+  onChange?: (newValue: number) => void;
+}
+
+const Sliders: React.FC<SlidersProps> = ({ theValue }) => {
+  // mapping functions, to convert initial value to desired value
   const valueToLabel = (value: number) => {
     const labelMap = [3, 6, 9, 12, 15, 50];
     return labelMap[value];
   };
 
-  // const labelToValue = (label: number) => {
-  //   const valueMap = {
-  //     3: 0,
-  //     6: 1,
-  //     9: 2,
-  //     12: 3,
-  //     15: 4,
-  //     50: 5,
-  //   };
-  //   // @ts-ignore
-  //   return valueMap[label];
-  // };
-
-  // Define marks for the slider
+  // marks for the slider
   const marks = [
     { value: 0, label: '3' },
     { value: 1, label: '6' },
@@ -32,7 +25,7 @@ const Sliders = () => {
     { value: 5, label: '50' },
   ];
 
-  // Function to get the text for the aria value
+  // function to get the text for the aria value
   const valuetext = (value: number) => {
     return `${valueToLabel(value)}`;
   };
@@ -43,11 +36,17 @@ const Sliders = () => {
     setValue(newValue as number);
   };
 
+  console.log(valueToLabel(value));
+
+  const dispatch = useDispatch();
+
+  dispatch(sliderValue(valueToLabel(value)));
+
   return (
     <div className="w-full max-w-[725px]">
       <Slider
         aria-label="Restricted values"
-        defaultValue={3}
+        defaultValue={0}
         getAriaValueText={valuetext}
         step={1}
         valueLabelDisplay="off"
@@ -57,7 +56,6 @@ const Sliders = () => {
         onChange={handleChange}
         value={value}
       />
-      <Typography>Selected Value: {valueToLabel(value)}</Typography>
     </div>
   );
 };
