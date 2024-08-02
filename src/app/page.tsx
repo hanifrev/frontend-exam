@@ -10,7 +10,7 @@ export default async function Home() {
   // console.log(getData);
 
   return (
-    <div className="mx-auto flex flex-col items-center gap-4 justify-center pt-5 w-full">
+    <div>
       <HomeContainer />
     </div>
   );

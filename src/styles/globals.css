@@ -32,6 +32,18 @@ body {
   }
 }
 
+.logo-style {
+  background: linear-gradient(
+    270deg,
+    rgb(255, 210, 95) 0%,
+    rgb(255, 92, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
 /* SLIDER CUSTOM CSS */
 .MuiSlider-root {
   height: 8px;
