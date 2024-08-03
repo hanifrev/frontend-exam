@@ -13,6 +13,9 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      screens: {
+        xl: '1439px',
+      },
       colors: {
         default: {
           primary: '#3498db', // Blue as main color

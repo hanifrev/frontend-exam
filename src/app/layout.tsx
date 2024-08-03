@@ -1,10 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Ubuntu } from 'next/font/google';
 import '@/styles/globals.css';
 import StoreProvider from '@/lib/Provider/StoreProvider';
 import Navigation from '@/common/components/Navigation';
 
 const inter = Inter({ subsets: ['latin'] });
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  style: ['normal'],
+  weight: ['300', '400', '500', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'AHA FRONTEND EXAM - FAISHAL HANIF',
@@ -19,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={inter.className}>
+        <body className={ubuntu.className}>
           <Navigation />
           {children}
         </body>
