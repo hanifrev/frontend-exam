@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { exampleApi } from '@/lib/services/api';
+import { examAPI } from '@/lib/services/api';
 import counterReducer from './features/counterSlice';
 import sliderReducer from './features/sliderSlice';
 
@@ -8,10 +8,10 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
     slider: sliderReducer,
-    [exampleApi.reducerPath]: exampleApi.reducer,
+    [examAPI.reducerPath]: examAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(exampleApi.middleware),
+    getDefaultMiddleware().concat(examAPI.middleware),
 });
 
 setupListeners(store.dispatch);

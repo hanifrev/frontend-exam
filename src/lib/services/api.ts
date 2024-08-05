@@ -1,22 +1,30 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { User } from './types/Users';
 
-// Define a base query function using fetch
 const baseQuery = fetchBaseQuery({
   baseUrl: `${process.env.NEXT_PUBLIC_URL}/api`,
 });
 
-// Define an API slice with endpoints
-export const exampleApi = createApi({
-  reducerPath: 'exampleApi',
+export const examAPI = createApi({
+  reducerPath: 'examAPI',
   baseQuery: baseQuery,
   endpoints: (builder) => ({
-    getTheUsers: builder.query<User, {}>({
-      query: () => `users`,
+    followers: builder.query<Follows, void>({
+      query: () => `users/all?page=1&pageSize=10`,
     }),
-    // Add more endpoints as needed
+    following: builder.query<Follows, void>({
+      query: () => `users/friends?page=1&pageSize=10`,
+    }),
+    searching: builder.query<UsersResponse, SearchQueryParams>({
+      query: (args) => {
+        const { pageSize, keyword } = args;
+        return {
+          url: `/users/all?page=1`,
+          params: { pageSize, keyword },
+        };
+      },
+    }),
   }),
 });
 
-// Export API hooks for usage in components
-export const { useGetTheUsersQuery } = exampleApi;
+export const { useFollowersQuery, useFollowingQuery, useSearchingQuery } =
+  examAPI;

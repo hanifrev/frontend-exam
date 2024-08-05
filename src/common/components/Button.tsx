@@ -8,12 +8,14 @@ interface ButtonProps {
   text: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   variant?: ButtonVariant;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   text,
   variant = 'primary',
   onClick,
+  disabled,
 }) => {
   const buttonStyle = twMerge(
     clsx(
@@ -37,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
   );
 
   return (
-    <button className={buttonStyle} onClick={onClick}>
+    <button className={buttonStyle} onClick={onClick} disabled={disabled}>
       {text}
     </button>
   );
