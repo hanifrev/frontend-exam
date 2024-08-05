@@ -1,11 +1,13 @@
-interface SearchQueryParams {
+import { Follow } from './follows.types';
+
+export interface SearchQueryParams {
   pageSize: number | string;
   keyword: string;
 }
 
-interface UsersResponse {
+export interface UsersResponse {
   map: any;
-  data: Follows;
+  data: Follow;
   total: number;
   page: number;
   pageSize: number;

@@ -9,6 +9,7 @@ import Follows from '../components/Follow';
 import SearchResultCard from '../components/SearchResultCard';
 import SearchResultLoading from '../components/SkeletonLoading/SearchResultLoading';
 import Button from '../components/Button';
+import { Follow } from '@/lib/services/types/follows.types';
 
 const ResultContainer = () => {
   const searchParams = useSearchParams();
@@ -46,12 +47,13 @@ const ResultContainer = () => {
                 <SearchResultLoading key={index} />
               ))}
             {theData &&
-              theData.map((item: Follows, index: number) => {
+              theData.map((item: Follow, index: number) => {
                 return (
                   <SearchResultCard
                     title={item.name}
                     username={item.username}
                     imageSrc={`https://i.pravatar.cc/150?img=${index}`}
+                    key={index}
                   />
                 );
               })}

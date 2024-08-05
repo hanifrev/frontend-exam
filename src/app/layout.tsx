@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Ubuntu } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import '@/styles/globals.css';
 import StoreProvider from '@/lib/Provider/StoreProvider';
 import Navigation from '@/common/components/Navigation';
 
-const inter = Inter({ subsets: ['latin'] });
 const ubuntu = Ubuntu({
   subsets: ['latin'],
   style: ['normal'],

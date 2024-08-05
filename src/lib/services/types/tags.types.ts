@@ -1,4 +1,4 @@
-interface Tags {
+export interface Tags {
   map: any;
   id: string;
   name: string;

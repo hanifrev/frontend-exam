@@ -6,6 +6,7 @@ import React from 'react';
 import TagsCard from '../components/TagsCard';
 import { useTagsQuery } from '@/lib/services/api';
 import TagsLoading from '../components/SkeletonLoading/TagsLoading';
+import { Tags } from '@/lib/services/types/tags.types';
 
 const TagsContainer = () => {
   const { data: tagsData, isLoading } = useTagsQuery();
@@ -36,8 +37,14 @@ const TagsContainer = () => {
                 <TagsLoading key={index} />
               ))}
             {theData &&
-              theData.map((item: Tags) => {
-                return <TagsCard count={item.count} tagsName={item.name} />;
+              theData.map((item: Tags, index: number) => {
+                return (
+                  <TagsCard
+                    count={item.count}
+                    tagsName={item.name}
+                    key={index}
+                  />
+                );
               })}
           </div>
         </div>

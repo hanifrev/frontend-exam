@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProfileUserCard from './ProfileUserCard';
 import { useFollowersQuery, useFollowingQuery } from '@/lib/services/api';
 import ProfileFollowLoading from './SkeletonLoading/ProfileFollowLoading';
+import { Follow } from '@/lib/services/types/follows.types';
 
 const Follows = () => {
   const [tabActive, setTabActive] = useState(0);
@@ -41,7 +42,7 @@ const Follows = () => {
             ))}
 
           {followersData &&
-            followersData.map((item: Follows, index: number) => {
+            followersData.map((item: Follow, index: number) => {
               return (
                 <ProfileUserCard
                   username={item.username}
@@ -49,6 +50,7 @@ const Follows = () => {
                   // for image source, i use different image source since the image link on API is broken
                   imageSrc={`https://i.pravatar.cc/150?img=${index}`}
                   followed={item.isFollowing}
+                  key={index}
                 />
               );
             })}
@@ -60,7 +62,7 @@ const Follows = () => {
               <ProfileFollowLoading key={index} />
             ))}
           {followingsData &&
-            followingsData.map((item: Follows, index: number) => {
+            followingsData.map((item: Follow, index: number) => {
               return (
                 <ProfileUserCard
                   username={item.username}
@@ -68,6 +70,7 @@ const Follows = () => {
                   // for image source, i use different image source since the image link on API is broken
                   imageSrc={`https://i.pravatar.cc/50?img=${index * 2}`}
                   followed={item.isFollowing}
+                  key={index}
                 />
               );
             })}
