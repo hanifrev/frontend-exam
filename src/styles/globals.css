@@ -39,6 +39,12 @@ body {
   font-weight: 600;
 }
 
+.break-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* SLIDER CUSTOM CSS */
 .MuiSlider-root {
   height: 8px;

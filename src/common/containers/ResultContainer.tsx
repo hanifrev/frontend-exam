@@ -7,6 +7,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Follows from '../components/Follow';
 import SearchResultCard from '../components/SearchResultCard';
+import SearchResultLoading from '../components/SkeletonLoading/SearchResultLoading';
+import Button from '../components/Button';
 
 const ResultContainer = () => {
   const searchParams = useSearchParams();
@@ -38,8 +40,11 @@ const ResultContainer = () => {
             <span className="text-2xl hidden lg:flex">Results</span>
           </div>
           <div className="text-2xl lg:hidden">Results</div>
-          <div className="pt-6 flex flex-col gap-[40px] md:flex-row md:flex-nowrap ">
-            {isLoading && <div>LOADING,.,....</div>}
+          <div className="pt-6 flex flex-col gap-[40px] md:flex-row flex-wrap ">
+            {isLoading &&
+              Array.from({ length: 6 }).map((_, index) => (
+                <SearchResultLoading key={index} />
+              ))}
             {theData &&
               theData.map((item: Follows, index: number) => {
                 return (
@@ -50,6 +55,9 @@ const ResultContainer = () => {
                   />
                 );
               })}
+          </div>
+          <div className="py-10">
+            <Button variant="primary" text="MORE" />
           </div>
         </div>
       </div>

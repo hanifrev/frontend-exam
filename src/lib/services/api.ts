@@ -23,8 +23,15 @@ export const examAPI = createApi({
         };
       },
     }),
+    tags: builder.query<Tags, void>({
+      query: () => `tags`,
+    }),
   }),
 });
 
-export const { useFollowersQuery, useFollowingQuery, useSearchingQuery } =
-  examAPI;
+export const {
+  useFollowersQuery,
+  useFollowingQuery,
+  useSearchingQuery,
+  useTagsQuery,
+} = examAPI;

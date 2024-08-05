@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <>
       {/* mobile */}
-      <div className="fixed lg:hidden flex items-center h-[66px] bottom-0 w-full bg-[#202020] ">
+      <div className="fixed lg:hidden flex items-center h-[66px] bottom-0 w-full bg-[#202020] z-[9999]">
         <div className="flex flex-row gap-[50px] justify-center align-middle w-full">
           <Link href={'/'}>
             <Image

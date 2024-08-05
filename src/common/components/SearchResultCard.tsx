@@ -22,7 +22,7 @@ const SearchResultCard: React.FC<ResultCardProps> = ({
         className="w-min-[335px] w-full h-min-[223px] h-[223px] md:w-full md:w-max-[219px] md:h-[146px] object-cover"
       />
       <div className="pt-5 pb-1 text-[15px]">{title}</div>
-      <div className="text-[11.17px] text-[#b2b2b2]">{username}</div>
+      <div className="text-[11.17px] text-[#b2b2b2]">by {username}</div>
     </div>
   );
 };
