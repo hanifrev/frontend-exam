@@ -33,7 +33,7 @@ const TagsContainer = () => {
             </span>
           </div>
           <div className="text-2xl lg:hidden">Tags</div>
-          <div className="pt-6 flex flex-row gap-6 flex-wrap lg:w-[846px] lg:pb-8">
+          <div className="pt-6 flex flex-row gap-6 flex-wrap justify-between lg:w-[846px] lg:pb-8">
             {isLoading &&
               Array.from({ length: 9 }).map((_, index) => (
                 <TagsLoading key={index} />

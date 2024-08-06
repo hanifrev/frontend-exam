@@ -22,6 +22,8 @@ const ResultContainer = () => {
   });
 
   const theData = results && results.data;
+  // @ts-ignore
+  const noData = theData && theData.length < 1;
 
   return (
     <div className="px-5 lg:px-0">
@@ -60,8 +62,10 @@ const ResultContainer = () => {
                   />
                 );
               })}
+            {/* @ts-ignore */}
+            {noData && <div className="font-bold">NO DATA FOUND</div>}
           </div>
-          <div className="py-10">
+          <div className={`py-10 ${noData && 'hidden'}`}>
             <Button variant="primary" text="MORE" />
           </div>
         </div>
