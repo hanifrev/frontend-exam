@@ -24,7 +24,7 @@ const TagsContainer = () => {
                 src={'/chev-back.svg'}
                 width={26}
                 height={26}
-                className="w-[26px] h-[26px] cursor-pointer hidden"
+                className="w-[26px] h-[26px] cursor-pointer lg:hidden"
               />
             </Link>
             <span className="text-2xl lg:hidden">Home Page</span>
