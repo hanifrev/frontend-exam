@@ -25,9 +25,9 @@ const ResultContainer = () => {
 
   return (
     <div className="px-5 lg:px-0">
-      <div className="xl:flex xl:flex-row xl:justify-between xl:w-full xl:max-w-max xl:h-screen xl:transform xl:translate-x-[210px] md:pt-12 xl:pt-[54px]">
+      <div className="container-result">
         <div className="md:w-[737px] mx-auto">
-          <div className="flex flex-row gap-[13px] items-center h-[70px] mb-5">
+          <div className="flex flex-row gap-[13px] items-center h-[70px] mb-5 lg:mb-0 lg:transform lg:-translate-x-[38px]">
             <Link href={'/'}>
               <Image
                 alt="back"
@@ -38,7 +38,9 @@ const ResultContainer = () => {
               />
             </Link>
             <span className="text-2xl lg:hidden">Home Page</span>
-            <span className="text-2xl hidden lg:flex">Results</span>
+            <span className="text-2xl lg:text-[30px] hidden lg:flex">
+              Results
+            </span>
           </div>
           <div className="text-2xl lg:hidden">Results</div>
           <div className="pt-6 flex flex-col gap-[40px] md:flex-row flex-wrap ">
@@ -52,6 +54,7 @@ const ResultContainer = () => {
                   <SearchResultCard
                     title={item.name}
                     username={item.username}
+                    // for image source, i use different image source since the image link on API is broken
                     imageSrc={`https://i.pravatar.cc/150?img=${index}`}
                     key={index}
                   />

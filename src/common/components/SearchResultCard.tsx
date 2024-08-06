@@ -16,7 +16,7 @@ const SearchResultCard: React.FC<ResultCardProps> = ({
     <div className="flex flex-col md:w-[219px]">
       <Image
         alt="card"
-        src={imageSrc ? imageSrc : 'https://i.pravatar.cc/150?img=3`'}
+        src={imageSrc ? imageSrc : 'https://i.pravatar.cc/150?img=3'}
         width={335}
         height={223}
         className="w-min-[335px] w-full h-min-[223px] h-[223px] md:w-full md:w-max-[219px] md:h-[146px] object-cover"

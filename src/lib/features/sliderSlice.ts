@@ -5,7 +5,7 @@ interface sliderState {
 }
 
 const initialState: sliderState = {
-  value: 3,
+  value: 12,
 };
 
 const sliderSlice = createSlice({

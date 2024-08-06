@@ -15,8 +15,6 @@ const Follows = () => {
   const followersData = followerData?.data;
   const followingsData = followingData?.data;
 
-  console.log(followerLoading);
-
   return (
     <div className="hidden xl:flex absolute w-[375px] top-0 right-0 xl:flex-col xl:fixed">
       <div className="flex flex-row justify-between py-8 text-base ">

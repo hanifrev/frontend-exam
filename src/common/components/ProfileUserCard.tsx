@@ -19,7 +19,7 @@ const ProfileUserCard: React.FC<ProfileCardProps> = ({
     <div className="flex flex-row justify-between px-4 items-center">
       <div className="flex flex-row items-center">
         <Image
-          src={imageSrc ? imageSrc : 'https://i.pravatar.cc/150?img=3`'}
+          src={imageSrc ? imageSrc : 'https://i.pravatar.cc/150?img=3'}
           alt="profile pics"
           width={40}
           height={40}

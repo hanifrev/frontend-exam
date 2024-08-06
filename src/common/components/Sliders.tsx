@@ -36,8 +36,6 @@ const Sliders: React.FC<SlidersProps> = ({ theValue }) => {
     setValue(newValue as number);
   };
 
-  console.log(valueToLabel(value));
-
   const dispatch = useDispatch();
 
   dispatch(sliderValue(valueToLabel(value)));

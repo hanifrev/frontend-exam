@@ -15,20 +15,22 @@ const TagsContainer = () => {
 
   return (
     <div className="px-5 lg:px-0 pb-28">
-      <div className="xl:flex xl:flex-row xl:justify-between xl:w-full xl:max-w-max xl:h-screen xl:transform xl:translate-x-[210px] md:pt-12 xl:pt-[54px]">
+      <div className="container-tags">
         <div className="md:w-[737px] mx-auto">
-          <div className="flex flex-row gap-[13px] items-center h-[70px] mb-5">
+          <div className="flex flex-row gap-[13px] items-center h-[70px] mb-5 md:mb-0 lg:transform lg:-translate-x-[38px]">
             <Link href={'/'}>
               <Image
                 alt="back"
                 src={'/chev-back.svg'}
                 width={26}
                 height={26}
-                className="w-[26px] h-[26px] cursor-pointer"
+                className="w-[26px] h-[26px] cursor-pointer hidden"
               />
             </Link>
             <span className="text-2xl lg:hidden">Home Page</span>
-            <span className="text-2xl hidden lg:flex">Tags</span>
+            <span className="text-2xl lg:text-[30px] lg:pl-6 hidden lg:flex">
+              Tags
+            </span>
           </div>
           <div className="text-2xl lg:hidden">Tags</div>
           <div className="pt-6 flex flex-row gap-6 flex-wrap lg:w-[846px] lg:pb-8">

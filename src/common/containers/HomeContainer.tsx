@@ -39,6 +39,8 @@ const HomeContainer = () => {
   // to get pageSize value
   const getPageSize = useSelector((state: RootState) => state.slider.value);
 
+  const resultNum = getPageSize && getPageSize;
+
   const handleSearch = () => {
     router.push(
       `/results?${createSearchString('search', searchQuery)}&${createPageSizeString('pageSize', getPageSize)}`
@@ -54,11 +56,12 @@ const HomeContainer = () => {
         <div className="md:w-[725px] mx-auto">
           <div className="font-light text-2xl pb-4">Search</div>
           <Input placeholder="Keyword" onChange={searchInput} />
+          <div className="hidden lg:flex border border-solid border-[#302E30] w-[725px] mt-7"></div>
           <div className="font-light text-2xl pt-7 pb-6">
             # Of results per page
           </div>
           <div className="flex flex-row items-center gap-[10px]">
-            <span className="font-bold text-5xl">99</span>
+            <span className="font-bold text-5xl">{resultNum}</span>
             <span className="text-base">result</span>
           </div>
           <div className="pt-5">
