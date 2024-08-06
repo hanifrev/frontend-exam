@@ -52,7 +52,7 @@ const HomeContainer = () => {
       <div className="h-[70px] flex items-center w-full lg:hidden">
         <span className="logo-style  lg:flex">LOGO</span>
       </div>
-      <div className="xl:flex xl:flex-row xl:justify-between xl:w-full xl:max-w-max xl:h-screen xl:transform xl:translate-x-[210px] md:pt-12 xl:pt-[54px]">
+      <div className="xl:flex xl:flex-row xl:justify-between xl:w-full xl:max-w-max xl:h-screen xl:transform xl:translate-x-[210px] lg:pt-12 xl:pt-[54px]">
         <div className="md:w-[725px] mx-auto">
           <div className="font-light text-2xl pb-4">Search</div>
           <Input placeholder="Keyword" onChange={searchInput} />
